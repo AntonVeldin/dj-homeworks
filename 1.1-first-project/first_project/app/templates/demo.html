@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p style="color: blue; font-size: 24px">
+    Blue color text 24 px size
+    {{ test }}
+</p>
+<p>
+    {% for x in data %}
+    {{ x }}
+    {% endfor %}
+</p>
+<ul style="color: blue; font-size: 24px">
+    {% for x in data %}
+    <li>{{ x }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

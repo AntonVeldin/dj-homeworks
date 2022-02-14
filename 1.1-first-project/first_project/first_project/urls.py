@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from app.views import home_view, time_view, workdir_view
+from app.views import home_view, time_view, workdir_view, my_pagi, user_report, hello
 
 urlpatterns = [
     path('', home_view, name='home'),
     path('current_time/', time_view, name='time'),
     path('workdir/', workdir_view, name='workdir'),
     path('admin/', admin.site.urls),
+    path('my_pagi/', my_pagi, name='my_pagi'),
+    path('users/<date:dt>/', user_report, name='user_report'),
+    path('hello/', hello, name='hello')
 ]
