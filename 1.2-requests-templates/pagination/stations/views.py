@@ -4,6 +4,16 @@ from django.urls import reverse
 import csv
 from pagination.settings import BUS_STATION_CSV
 
+all_bus_stations = []
+with open(BUS_STATION_CSV) as csv_file:
+    reader = csv.DictReader(csv_file)
+    for row in reader:
+        station = {}
+        station['Name'] = row['Name']
+        station['Street'] = row['Street']
+        station['District'] = row['District']
+        all_bus_stations.append(station)
+
 
 def index(request):
     return redirect(reverse('bus_stations'))
@@ -11,7 +21,6 @@ def index(request):
 
 def bus_stations(request):
     page_number = int(request.GET.get("page", 1))
-    all_bus_stations = []
     with open(BUS_STATION_CSV) as csv_file:
         reader = csv.DictReader(csv_file)
         for row in reader:
