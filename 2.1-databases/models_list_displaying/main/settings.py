@@ -54,9 +54,11 @@ MIDDLEWARE = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'netology_models_list',
+        'NAME': 'django_2.1.2',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+        'USER': 'antonveldin',
+        'PASSWORD': 'postgres',
     }
 }
 
@@ -119,3 +121,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+#
+# DATE_FORMAT = '%Y-%m-%d'
+
