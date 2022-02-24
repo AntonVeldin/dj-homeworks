@@ -33,7 +33,7 @@ def books_view_date(request, dt: datetime):
 
     paginator = Paginator(pub_dates, 1)
     page = paginator.get_page(index_dt)
-
+    
     prev_page = paginator.get_page(index_dt - 1).object_list[0]
     next_page = paginator.get_page(index_dt + 1).object_list[0]
     context = {
