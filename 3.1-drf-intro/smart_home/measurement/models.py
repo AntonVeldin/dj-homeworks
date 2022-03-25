@@ -9,4 +9,4 @@ class Sensor(models.Model):
 class Measurement(models.Model):
     id = models.IntegerField
     temperature = models.IntegerField
-    date = models.DateField
+    created_at = models.DateTimeField
