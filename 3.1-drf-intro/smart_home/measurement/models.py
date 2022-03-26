@@ -9,6 +9,6 @@ class Sensor(models.Model):
 
 class Measurement(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='measurements')
-    # sensor_id = models.IntegerField()
     temperature = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
+    photo_measurement = models.ImageField(null=True)

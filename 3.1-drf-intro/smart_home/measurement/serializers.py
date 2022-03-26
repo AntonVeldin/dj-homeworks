@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from measurement.models import Sensor, Measurement
+from django.forms import fields
 
 
 class SensorSerializer(serializers.ModelSerializer):
@@ -10,6 +11,8 @@ class SensorSerializer(serializers.ModelSerializer):
 
 
 class MeasurementCreateSerializer(serializers.ModelSerializer):
+    photo_measurement = fields.ImageField(allow_empty_file=True)
+
     class Meta:
         model = Measurement
         fields = ['sensor', 'temperature', 'created_at']
