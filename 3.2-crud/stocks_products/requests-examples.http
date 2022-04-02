@@ -1,14 +1,14 @@
 # примеры API-запросов
 
-@baseUrl = http://localhost:8000/api/v1
+#@baseUrl = http://localhost:8000/api/v1
 
 # создание продукта
 POST {{baseUrl}}/products/
 Content-Type: application/json
 
 {
-  "title": "Помидор",
-  "description": "Лучшие помидоры на рынке"
+  "title": "Помидор_5",
+  "description": "Лучшие помидоры на рынке_2"
 }
 
 ###
@@ -20,7 +20,7 @@ Content-Type: application/json
 ###
 
 # обновление продукта
-PATCH {{baseUrl}}/products/1/
+PATCH {{baseUrl}}/products/2/
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 ###
 
 # удаление продукта
-DELETE {{baseUrl}}/products/1/
+DELETE {{baseUrl}}/products/2/
 Content-Type: application/json
 
 ###
@@ -46,17 +46,17 @@ POST {{baseUrl}}/stocks/
 Content-Type: application/json
 
 {
-  "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru3",
+  "address": "150",
   "positions": [
     {
-      "product": 2,
+      "product": 1,
       "quantity": 250,
       "price": 120.50
     },
     {
       "product": 3,
       "quantity": 100,
-      "price": 180
+      "price": 180.2
     }
   ]
 }
@@ -64,19 +64,19 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/4/
+PATCH {{baseUrl}}/stocks/26/
 Content-Type: application/json
 
 {
   "positions": [
     {
-      "product": 2,
-      "quantity": 100,
+      "product": 1,
+      "quantity": 1,
       "price": 130.80
     },
     {
       "product": 3,
-      "quantity": 243,
+      "quantity": 1,
       "price": 145
     }
   ]

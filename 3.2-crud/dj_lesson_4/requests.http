@@ -1,0 +1,43 @@
+
+GET http://127.0.0.1:8000/comments/
+
+###
+POST http://127.0.0.1:8000/comments/
+Content-Type: application/json
+
+{
+"user": 1,
+"text": "_from_rest_client_2"
+}
+
+###
+GET http://127.0.0.1:8000/comments/3/
+
+###
+PATCH http://127.0.0.1:8000/comments/3/
+Content-Type: application/json
+
+{
+  "text": "updated "
+}
+
+###
+DELETE http://127.0.0.1:8000/comments/3/
+
+###
+GET http://127.0.0.1:8000/comments/?user=1
+
+###
+GET http://127.0.0.1:8000/comments/?q=from
+
+###
+GET http://127.0.0.1:8000/comments/?q=from&ordering=-id
+
+###
+GET http://127.0.0.1:8000/comments/?o=-created_at,id
+
+###
+GET http://127.0.0.1:8000/comments/?page=1
+
+###
+GET http://127.0.0.1:8000/comments/?limit=2&offset=3
