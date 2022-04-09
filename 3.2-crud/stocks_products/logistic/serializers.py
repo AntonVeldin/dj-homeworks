@@ -44,16 +44,4 @@ class StockSerializer(serializers.ModelSerializer):
                 product=pos['product'],
                 defaults=pos
             )
-
-
-        # for pos in positions:
-        #     StockProduct.objects.update(stock=instance, **pos)
-        # здесь вам надо обновить связанные таблицы
-        # в нашем случае: таблицу StockProduct
-        # с помощью списка positions
-
         return stock
-
-    def partial_update(self, instance, validated_data):
-        pass
-
