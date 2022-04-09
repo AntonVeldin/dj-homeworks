@@ -7,7 +7,7 @@ POST {{baseUrl}}/products/
 Content-Type: application/json
 
 {
-  "title": "Помидор_5",
+  "title": "Помидор_6",
   "description": "Лучшие помидоры на рынке_2"
 }
 
@@ -36,8 +36,15 @@ Content-Type: application/json
 ###
 
 # поиск продуктов по названию и описанию
-GET {{baseUrl}}/products/?search=помидор
+GET {{baseUrl}}/products/?search=Лучшие
 Content-Type: application/json
+
+###
+
+# поиск продуктов по id
+GET {{baseUrl}}/products/?id=1
+Content-Type: application/json
+
 
 ###
 
@@ -46,17 +53,17 @@ POST {{baseUrl}}/stocks/
 Content-Type: application/json
 
 {
-  "address": "150",
+  "address": "раз три",
   "positions": [
     {
       "product": 1,
-      "quantity": 250,
-      "price": 120.50
+      "quantity": 11,
+      "price": 11
     },
     {
       "product": 3,
-      "quantity": 100,
-      "price": 180.2
+      "quantity": 22,
+      "price": 22
     }
   ]
 }
@@ -64,23 +71,35 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/26/
+PATCH {{baseUrl}}/stocks/35/
 Content-Type: application/json
 
 {
   "positions": [
     {
       "product": 1,
-      "quantity": 1,
-      "price": 130.80
+      "quantity": 666,
+      "price": 777
     },
     {
       "product": 3,
-      "quantity": 1,
-      "price": 145
+      "quantity": 888,
+      "price": 999
+    },
+    {
+      "product": 5,
+      "quantity": 1010,
+      "price": 1010
     }
   ]
 }
+
+###
+
+# удаление склада
+
+DELETE {{baseUrl}}/stocks/34/
+Content-Type: application/json
 
 ###
 
