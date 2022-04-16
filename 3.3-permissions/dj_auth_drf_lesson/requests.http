@@ -10,3 +10,22 @@ Content-Type: application/json
     "user": 1,
     "text": "Объявление"
 }
+
+###
+# Добавим объявление с помощью токена без указания пользователя
+POST http://127.0.0.1:8000/adv/
+Content-Type: application/json
+Authorization: Token 4f7792754b506665c9d423ffe531d2cdf84fbfc1
+
+{
+    "text": "Объявление_2"
+}
+
+###
+# Удаляем объявление без аутентификации
+DELETE http://127.0.0.1:8000/adv/1/
+
+###
+# Удаляем объявление с токеном
+DELETE http://127.0.0.1:8000/adv/2/
+Authorization: Token 4f7792754b506665c9d423ffe531d2cdf84fbfc1
