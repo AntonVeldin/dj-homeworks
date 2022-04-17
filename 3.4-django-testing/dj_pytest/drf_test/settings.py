@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'drf_test.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dj_pytest_lesson',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        'USER': 'antonveldin',
+        'PASSWORD': 'postgres',
     }
 }
 
