@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework.routers import DefaultRouter
+
+from demo.views import MessageViewSet
+
+r = DefaultRouter()
+r.register('messages', MessageViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+] + r.urls
