@@ -13,7 +13,7 @@ class AdvViewSet(ModelViewSet):
     serializer_class = AdvSerializer
 # Опишем разделение прав.
 # Передаем список с требуемыми разрешениями для манипуляций.
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, ]
     # throttle_classes = [AnonRateThrottle]
 
     def perform_create(self, serializer):
