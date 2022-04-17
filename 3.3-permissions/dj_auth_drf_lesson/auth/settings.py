@@ -136,12 +136,17 @@ REST_FRAMEWORK = {
 # Добавим возможность аутентификации по токену.
         'rest_framework.authentication.TokenAuthentication',
     ],
+# Добавим классы для контроля троттринга.
     'DEFAULT_THROTTLE_CLASSES': [
-        # 'rest_framework.throttling.UserRateThrottle',
-        # 'rest_framework.throttling.AnonRateThrottle',
+# По умолчанию реализованные в DRF классы:
+# 1. Троттлинг по пользователю
+        'rest_framework.throttling.UserRateThrottle',
+# 2. Троттлинг по анонимному пользователю
+        'rest_framework.throttling.AnonRateThrottle',
     ],
+# Добавим настройки для каждого класса.
     'DEFAULT_THROTTLE_RATES': {
-        'user': '10/minute',
+        'user': '3/minute',
         'anon': '2/minute',
     }
 }
