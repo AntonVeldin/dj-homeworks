@@ -6,7 +6,7 @@ from demo.models import Message
 
 
 @pytest.mark.django_db
-def test_api():
+def test_get_messages():
     # Arrange
     client = APIClient()
     # Создадим пользователя.
@@ -25,4 +25,3 @@ def test_api():
     assert len(data) == 1
     # Проверим текст ответа созданного сообщения. В ответе словарь.
     assert data[0]['text'] == 'test_msg'
-
