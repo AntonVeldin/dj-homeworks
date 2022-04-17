@@ -15,10 +15,10 @@ Content-Type: application/json
 # Добавим объявление с помощью токена без указания пользователя
 POST http://127.0.0.1:8000/adv/
 Content-Type: application/json
-Authorization: Token 4f7792754b506665c9d423ffe531d2cdf84fbfc1
+Authorization: Token 19ef88712f6e20ccdb0db4773d335cdd60692d55
 
 {
-    "text": "Объявление_2"
+    "text": "Объявление_3"
 }
 
 ###
@@ -27,5 +27,13 @@ DELETE http://127.0.0.1:8000/adv/1/
 
 ###
 # Удаляем объявление с токеном
-DELETE http://127.0.0.1:8000/adv/2/
+DELETE http://127.0.0.1:8000/adv/4/
+#Authorization: Token 19ef88712f6e20ccdb0db4773d335cdd60692d55
 Authorization: Token 4f7792754b506665c9d423ffe531d2cdf84fbfc1
+
+###
+# Посмотрим все объявления от имени любого пользователя с использованием токена
+GET http://127.0.0.1:8000/adv/
+Authorization: Token 4f7792754b506665c9d423ffe531d2cdf84fbfc1
+
+###
