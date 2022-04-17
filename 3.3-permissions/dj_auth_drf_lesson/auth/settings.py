@@ -140,9 +140,9 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_CLASSES': [
 # По умолчанию реализованные в DRF классы:
 # 1. Троттлинг по пользователю
-        'rest_framework.throttling.UserRateThrottle',
+#         'rest_framework.throttling.UserRateThrottle',
 # 2. Троттлинг по анонимному пользователю
-        'rest_framework.throttling.AnonRateThrottle',
+#         'rest_framework.throttling.AnonRateThrottle',
     ],
 # Добавим настройки для каждого класса.
     'DEFAULT_THROTTLE_RATES': {

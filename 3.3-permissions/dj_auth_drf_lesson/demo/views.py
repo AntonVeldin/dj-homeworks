@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.throttling import AnonRateThrottle
 from rest_framework.viewsets import ModelViewSet
 
@@ -14,7 +12,8 @@ class AdvViewSet(ModelViewSet):
     serializer_class = AdvSerializer
 # Добавим кастомный класс с ограничением IsOwnerOrReadOnly.
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
-    # throttle_classes = [AnonRateThrottle]
+# Добавим троттлинг для анонимных пользователей.
+    throttle_classes = [AnonRateThrottle]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
