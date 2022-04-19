@@ -1,5 +1,8 @@
-django
-djangorestframework
+django~=4.0.4
+djangorestframework~=3.13.1
 psycopg2-binary
 django-filter
 pytest-django
+
+
+pytest~=7.1.1
